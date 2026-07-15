@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jeffrey Kung — Full-Stack Developer</title>
+<meta name="description" content="Jeffrey Kung — Full-Stack Developer. Portfolio, experience, projects, and contact." />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0e14'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='%2339ff88' font-family='monospace'%3E%3E_%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- background grid / scanline flair -->
+<div class="bg-grid" aria-hidden="true"></div>
+<canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="logo">jeffrey<span class="accent">@</span>portfolio<span class="cursor-blink">_</span></a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#about" class="nav-link">about</a>
+      <a href="#experience" class="nav-link">experience</a>
+      <a href="#projects" class="nav-link">projects</a>
+      <a href="#skills" class="nav-link">skills</a>
+      <a href="#education" class="nav-link">education</a>
+      <a href="#contact" class="nav-link">contact</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section id="home" class="section hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">// hello world</p>
+        <h1>Jeffrey Kung</h1>
+        <h2 class="role">Full-Stack Developer</h2>
+        <p class="hero-desc">
+          I design and build scalable systems with Node.js, .NET, Python, and
+          Java — from an automated trading bot to an AI executive assistant.
+          Currently freelancing and shipping product-driven software with
+          real-world impact.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">view projects</a>
+          <a href="#contact" class="btn btn-ghost">get in touch</a>
+        </div>
+      </div>
+
+      <div class="hero-terminal">
+        <div class="terminal-titlebar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="terminal-title">jeffrey@portfolio: ~</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="line"><span class="prompt">jeffrey@portfolio</span><span class="path">~</span><span class="dollar">$</span> whoami</div>
+          <div class="output">Jeffrey Kung — Full-Stack Developer</div>
+          <div class="line"><span class="prompt">jeffrey@portfolio</span><span class="path">~</span><span class="dollar">$</span> <span id="typed-text"></span><span class="type-cursor">▋</span></div>
+        </div>
+        <form class="terminal-input-line" id="terminal-form">
+          <span class="prompt">jeffrey@portfolio</span><span class="path">~</span><span class="dollar">$</span>
+          <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="type 'help' and press enter" aria-label="Terminal command input" />
+        </form>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint" aria-label="Scroll down">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="section-num">01.</span> about</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I'm a full-stack developer with experience designing and building
+            scalable systems using <em>Node.js</em>, <em>.NET</em>,
+            <em>Python</em>, and <em>Java</em>. I'm skilled in API
+            development, backend architecture, and full-stack web
+            applications — recent projects include PharoahAI, a personalized
+            AI executive assistant, a fully automated trading bot, and a
+            social meetup mobile app.
+          </p>
+          <p>
+            I'm passionate about building product-driven solutions and
+            delivering real-world impact. I like clean, modular
+            architecture, robust error-handling, and interfaces that feel
+            quick and honest — and I like command lines more than is
+            probably healthy.
+          </p>
+        </div>
+        <div class="about-card">
+          <div class="terminal-titlebar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="terminal-title">about.json</span>
+          </div>
+          <pre class="code-block"><span class="tok-punc">{</span>
+  <span class="tok-key">"name"</span><span class="tok-punc">:</span> <span class="tok-str">"Jeffrey Kung"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"role"</span><span class="tok-punc">:</span> <span class="tok-str">"Full-Stack Developer"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"focus"</span><span class="tok-punc">:</span> <span class="tok-punc">[</span><span class="tok-str">"backend architecture"</span><span class="tok-punc">,</span> <span class="tok-str">"API development"</span><span class="tok-punc">,</span> <span class="tok-str">"automation"</span><span class="tok-punc">]</span><span class="tok-punc">,</span>
+  <span class="tok-key">"currentlyBuilding"</span><span class="tok-punc">:</span> <span class="tok-str">"GroupMeUp"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"education"</span><span class="tok-punc">:</span> <span class="tok-str">"BSc Computing, Queen's University"</span><span class="tok-punc">,</span>
+  <span class="tok-key">"status"</span><span class="tok-punc">:</span> <span class="tok-str">"open to opportunities"</span>
+<span class="tok-punc">}</span></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="section-num">02.</span> experience</h2>
+      <div class="experience-list">
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <h3>Freelance Developer <span class="exp-company">— JVAR Capital Limited, Remote</span></h3>
+            <span class="exp-date">Sept 2024 – Present</span>
+          </div>
+          <ul>
+            <li>Built a fully automated trading bot in Python with IBKR API, executing real-time trades and managing portfolios with dynamic strategies.</li>
+            <li>Developed PharoahAI, a personalized AI executive assistant MVP using Node.js, handling task automation, scheduling, and workflow optimization.</li>
+            <li>Designed scalable architectures, CLI and dashboard interfaces, and robust error-handling for production-level reliability.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <h3>Data Analyst (Contract) <span class="exp-company">— MDA Space, Brampton, ON</span></h3>
+            <span class="exp-date">Jun 2023 – Aug 2024</span>
+          </div>
+          <ul>
+            <li>Built Python-based ETL pipelines and SQL workflows for analytics, improving report accuracy and accessibility.</li>
+            <li>Created interactive Power BI dashboards for stakeholders, integrating automated data updates via Azure Data Factory.</li>
+            <li>Collaborated across teams using GitLab for version control and workflow management.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <h3>Full Stack Developer Intern, Global Markets <span class="exp-company">— TD Securities, Toronto, ON</span></h3>
+            <span class="exp-date">Aug 2021 – Jul 2022</span>
+          </div>
+          <ul>
+            <li>Developed Java-based components for corporate action management and document automation.</li>
+            <li>Built automation tools to parse .docx files into SQL databases via RESTful APIs.</li>
+            <li>Enhanced web UI using HTML, CSS, JavaScript and debugged APIs using DevTools.</li>
+          </ul>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <h3>Junior Backend Developer Intern <span class="exp-company">— JVAR Capital Limited, Toronto, ON</span></h3>
+            <span class="exp-date">May 2020 – Aug 2020</span>
+          </div>
+          <ul>
+            <li>Built ASP.NET Core web app to manage trade portfolios with full CRUD support and robust data validation.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="section-num">03.</span> projects</h2>
+      <div class="projects-grid">
+
+        <article class="project-card featured">
+          <div class="terminal-titlebar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="terminal-title">~/projects/pharoahai</span>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">featured</span>
+            <h3>PharoahAI</h3>
+            <p>
+              A personalized AI executive assistant (MVP) handling task
+              automation, scheduling, and workflow optimization — backend
+              built in Node.js with a modular design for extensibility.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Node.js</span>
+              <span class="tag">APIs</span>
+              <span class="tag">Automation</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link" data-placeholder="github">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="terminal-titlebar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="terminal-title">~/projects/trading-bot</span>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">fintech</span>
+            <h3>Automated Trading Bot</h3>
+            <p>
+              A fully automated trading bot built with the IBKR API,
+              executing real-time trades and managing portfolios with
+              dynamic strategies.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">IBKR API</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link" data-placeholder="github">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="terminal-titlebar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="terminal-title">~/projects/groupmeup</span>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">in progress</span>
+            <h3>GroupMeUp</h3>
+            <p>
+              A mobile social meetup app — backend API in ASP.NET Core for
+              event creation, joining logic, and user authentication, with a
+              Flutter frontend for browsing, filtering, and RSVP workflows.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Flutter</span>
+              <span class="tag">.NET Core</span>
+              <span class="tag">SQL Server</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link" data-placeholder="github">GitHub →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="section-num">04.</span> skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Languages</h3>
+          <div class="tag-row">
+            <span class="tag">JavaScript (Node.js)</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">C</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Bash</span>
+            <span class="tag">HTML/CSS</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Frameworks &amp; Tools</h3>
+          <div class="tag-row">
+            <span class="tag">Node.js</span>
+            <span class="tag">ASP.NET Core</span>
+            <span class="tag">ASP.NET MVC</span>
+            <span class="tag">AngularJS</span>
+            <span class="tag">REST APIs</span>
+            <span class="tag">Git</span>
+            <span class="tag">Azure DevOps</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Databases</h3>
+          <div class="tag-row">
+            <span class="tag">SQL Server</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">MongoDB</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Technologies</h3>
+          <div class="tag-row">
+            <span class="tag">IBKR API</span>
+            <span class="tag">Azure Data Factory</span>
+            <span class="tag">Flutter</span>
+            <span class="tag">WCF (learning)</span>
+            <span class="tag">Power BI</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Practices</h3>
+          <div class="tag-row">
+            <span class="tag">Agile/Scrum</span>
+            <span class="tag">Modular Backend Design</span>
+            <span class="tag">CI/CD</span>
+            <span class="tag">Unit Testing</span>
+            <span class="tag">DevTools Debugging</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section-title"><span class="section-num">05.</span> education</h2>
+      <div class="about-card education-card">
+        <div class="terminal-titlebar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="terminal-title">education.log</span>
+        </div>
+        <div class="code-block">
+          <h3>Queen's University — BSc in Computing (Honours)</h3>
+          <p class="edu-meta">Sept 2018 – Apr 2023 · Kingston, ON</p>
+          <p>Specialization in Systems Design &amp; Software Development</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container contact-container">
+      <h2 class="section-title"><span class="section-num">06.</span> contact</h2>
+      <p class="contact-lede">
+        Have a project in mind, or just want to talk shop about full-stack
+        development, automation, or fintech? My inbox is open.
+      </p>
+      <a href="mailto:jeffrey.kung00@gmail.com" class="btn btn-primary contact-email">say hello →</a>
+      <div class="socials">
+        <a href="https://github.com/jskung" target="_blank" rel="noopener noreferrer" class="social-link" id="github-link">GitHub</a>
+        <a href="https://linkedin.com/in/jeffrey-kung-0a92241a3" target="_blank" rel="noopener noreferrer" class="social-link" id="linkedin-link">LinkedIn</a>
+        <a href="mailto:jeffrey.kung00@gmail.com" class="social-link">Email</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <p>jeffrey@portfolio:~$ echo "thanks for stopping by"</p>
+    <p class="footer-meta">&copy; <span id="year"></span> Jeffrey Kung. Built with HTML, CSS &amp; JS.</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
