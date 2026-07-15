@@ -425,19 +425,62 @@ a {
 .tok-str { color: var(--accent); }
 .tok-punc { color: var(--muted); }
 
-.hobbies-block {
-  margin-top: 40px;
+/* flip tabs */
+
+.flip-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
 }
 
-.hobbies-label {
-  color: var(--accent);
+.flip-tab {
+  font-family: var(--font-mono);
   font-size: 0.85rem;
-  margin-bottom: 14px;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.hobbies-tags .tag {
-  font-size: 0.85rem;
-  padding: 7px 14px;
+.flip-tab:hover {
+  color: var(--fg);
+  border-color: var(--accent-dim);
+}
+
+.flip-tab.active {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+/* flip card */
+
+.flip-card {
+  perspective: 1600px;
+}
+
+.flip-card-inner {
+  display: grid;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  grid-area: 1 / 1;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
 }
 
 /* ---------- experience ---------- */

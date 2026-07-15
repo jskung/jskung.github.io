@@ -17,6 +17,23 @@ document.querySelectorAll('.nav-link').forEach((link) => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
+/* ---------- about flip card ---------- */
+
+const flipCard = document.getElementById('about-flip-card');
+const flipTabs = document.querySelectorAll('.flip-tab');
+
+flipTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    flipTabs.forEach((t) => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    flipCard.classList.toggle('is-flipped', tab.dataset.target === 'back');
+  });
+});
+
 /* ---------- typewriter effect ---------- */
 
 const typedEl = document.getElementById('typed-text');
