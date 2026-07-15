@@ -151,18 +151,6 @@ terminalForm.addEventListener('submit', (e) => {
   terminalInput.value = '';
 });
 
-/* ---------- placeholder project links ---------- */
-
-document.querySelectorAll('[data-placeholder]').forEach((link) => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    appendLine(
-      `heads up: this "${link.dataset.placeholder}" link is a placeholder — edit index.html to point it at the real URL.`
-    );
-    scrollTo('home');
-  });
-});
-
 /* ---------- scroll reveal ---------- */
 
 const revealTargets = document.querySelectorAll(

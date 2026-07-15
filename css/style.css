@@ -602,22 +602,6 @@ a {
   border-radius: 4px;
 }
 
-.project-links {
-  display: flex;
-  gap: 18px;
-  margin-top: 4px;
-}
-
-.project-link {
-  font-size: 0.82rem;
-  color: var(--accent);
-  transition: opacity 0.2s ease;
-}
-
-.project-link:hover {
-  opacity: 0.7;
-}
-
 /* ---------- skills ---------- */
 
 .skills-grid {
