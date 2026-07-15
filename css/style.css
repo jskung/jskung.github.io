@@ -425,6 +425,21 @@ a {
 .tok-str { color: var(--accent); }
 .tok-punc { color: var(--muted); }
 
+.hobbies-block {
+  margin-top: 40px;
+}
+
+.hobbies-label {
+  color: var(--accent);
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+.hobbies-tags .tag {
+  font-size: 0.85rem;
+  padding: 7px 14px;
+}
+
 /* ---------- experience ---------- */
 
 .experience-list {
